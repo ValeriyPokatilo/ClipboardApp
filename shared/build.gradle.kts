@@ -35,6 +35,7 @@ kotlin {
             api(libs.mokoMvvm.core)
             api(libs.mokoMvvm.flow)
             api(libs.mokoMvvm.flow.compose)
+            api(libs.androidx.navigation.compose)
         }
         iosMain.dependencies {
             api(libs.mokoMvvm.core)

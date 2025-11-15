@@ -14,6 +14,7 @@ junit = "4.13.2"
 kotlin = "2.2.20"
 kotlinxCoroutinesCore = "1.9.0"
 mokoMvvmCore = "0.16.1"
+navigationCompose = "2.9.5"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -30,6 +31,7 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 mokoMvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoMvvmCore" }
 mokoMvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "mokoMvvmCore" }
 mokoMvvm-flow-compose = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "mokoMvvmCore" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
