@@ -1,5 +1,6 @@
 package app.xl.clipboardapp.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -22,8 +23,13 @@ fun ClipboardScreen(
         LazyColumn(
             modifier = Modifier.padding(innerPadding)
         ) {
-            items(state.value) {
-                ClipboardItemRow(item = it)
+            items(state.value) { item ->
+                ClipboardItemRow(
+                    modifier = Modifier.clickable {
+                        viewModel.doCopyToClipboard(item.value)
+                    },
+                    item = item
+                )
             }
         }
     }

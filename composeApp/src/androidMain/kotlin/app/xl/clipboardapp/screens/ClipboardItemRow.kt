@@ -2,6 +2,7 @@ package app.xl.clipboardapp.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -15,10 +16,12 @@ import app.xl.clipboardapp.domain.ClipboardItem
 
 @Composable
 fun ClipboardItemRow(
+    modifier: Modifier = Modifier,
     item: ClipboardItem
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
+            .fillMaxWidth()
             .padding(horizontal = 24.dp)
             .padding(vertical = 8.dp)
     ) {
