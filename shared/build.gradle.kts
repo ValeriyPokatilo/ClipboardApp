@@ -19,13 +19,28 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+
+            export(libs.mokoMvvm.core)
+            export(libs.mokoMvvm.flow)
         }
     }
     
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.mokoMvvm.core)
+            implementation(libs.mokoMvvm.flow)
         }
+        androidMain.dependencies {
+            api(libs.mokoMvvm.core)
+            api(libs.mokoMvvm.flow)
+            api(libs.mokoMvvm.flow.compose)
+        }
+        iosMain.dependencies {
+            api(libs.mokoMvvm.core)
+            api(libs.mokoMvvm.flow)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
