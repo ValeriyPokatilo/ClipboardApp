@@ -49,7 +49,7 @@ object TestRepositoryImpl: Repository {
             ClipboardItem(0, "mail.ru", "sample@mail.ru"),
             ClipboardItem(1, "google", "test@gmail.com"),
             ClipboardItem(2, "Yandex", "noreply@yandex.ru"),
-            ClipboardItem(3, "Holder name", "TAD LASSO"),
+            ClipboardItem(3, "Holder name", "TED LASSO"),
             ClipboardItem(4, "Pin code", "7814"),
             ClipboardItem(5, "Code phrase", "blablabla"),
             ClipboardItem(6, "Foo", "Bar"),

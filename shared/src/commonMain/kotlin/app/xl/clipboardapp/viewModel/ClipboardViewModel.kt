@@ -13,13 +13,13 @@ import kotlinx.coroutines.launch
 class ClipboardViewModel(
     private val repository: Repository = TestRepositoryImpl
 ): ViewModel() {
-    private val _records = MutableStateFlow<List<ClipboardItem>>(emptyList()).cMutableStateFlow()
-    val record = _records.asStateFlow().cStateFlow()
+    private val _items = MutableStateFlow<List<ClipboardItem>>(emptyList()).cMutableStateFlow()
+    val items = _items.asStateFlow().cStateFlow()
 
     init {
         viewModelScope.launch {
             repository.getAllRecords().collect { records ->
-                _records.value = records
+                _items.value = records
             }
         }
     }
