@@ -1,0 +1,154 @@
+# ==============================================
+# Kotlin Multiplatform + iOS (SwiftUI)
+# ==============================================
+
+# ---- Kotlin / Gradle ----
+*.iml
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+.gradle/
+**/build/
+**/out/
+.gradle-cache/
+.kotlinc/
+local.properties
+
+# ---- Android ----
+*.apk
+*.aab
+*.ap_*
+*.dex
+*.class
+bin/
+gen/
+captures/
+.externalNativeBuild/
+.cxx/
+output.json
+# Android Studio Profiling
+*.hprof
+
+# ---- Kotlin Multiplatform Shared Code ----
+shared/.gradle/
+shared/build/
+shared/.idea/
+shared/local.properties
+shared/gradlew
+shared/gradlew.bat
+shared/gradle/
+shared/.kotlin/
+shared/.konan/
+
+# ---- IntelliJ IDEA / Android Studio ----
+.idea/
+*.iws
+*.ipr
+*.iml
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/httpRequests/
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/navEditor.xml
+.idea/other.xml
+.idea/vcs.xml
+.idea/deploymentTargetDropDown.xml
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ---- Xcode / Swift / SwiftUI ----
+# Build and derived data
+DerivedData/
+build/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+
+# Xcode project files
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+*.xcuserstate
+
+# SwiftPM
+/.swiftpm/
+Package.resolved
+.swiftpm/xcode/
+.build/
+
+# iOS output artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ---- Fastlane ----
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ---- CocoaPods ----
+Pods/
+Podfile.lock
+*.xcworkspace
+
+# ---- JetBrains Compose Multiplatform ----
+compose-build/
+compose-desktop/
+.idea/compose-build/
+**/.compose-cache/
+**/.skiko/
+
+# ---- Node / Web (if using KMP with JS) ----
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+build/js/
+package-lock.json
+yarn.lock
+
+# ---- Kotlin Native ----
+.konan/
+.kotlin/
+.idea/kotlinNativeCaches/
+*.klib
+
+# ---- Misc ----
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
+*.rej
+
+# ---- Environment / secrets ----
+.env
+.env.*
+secret.properties
+secrets.json
+google-services.json
+GoogleService-Info.plist
+
+# ---- Jetpack Compose Multiplatform specific ----
+compose-build/
+desktopApp/composeApp/build/
+composeApp/.gradle/
+composeApp/build/
