@@ -12,10 +12,11 @@
 		765B23992EC84C3900A58706 /* ViewModelObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B238C2EC84C3900A58706 /* ViewModelObservable.swift */; };
 		765B239A2EC84C3900A58706 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B238D2EC84C3900A58706 /* ViewModelState.swift */; };
 		765B239B2EC84C3900A58706 /* ViewModelStateNullable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B238E2EC84C3900A58706 /* ViewModelStateNullable.swift */; };
-		765B239C2EC84C3900A58706 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B23932EC84C3900A58706 /* ContentView.swift */; };
 		765B239D2EC84C3900A58706 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B23952EC84C3900A58706 /* iOSApp.swift */; };
 		765B239E2EC84C3900A58706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765B23902EC84C3900A58706 /* Preview Assets.xcassets */; };
 		765B239F2EC84C3900A58706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765B23922EC84C3900A58706 /* Assets.xcassets */; };
+		765B23A42EC84C8F00A58706 /* ClipboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B23A32EC84C8F00A58706 /* ClipboardScreen.swift */; };
+		765B23A62EC84CA100A58706 /* ClipboardItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B23A52EC84CA100A58706 /* ClipboardItemRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +28,11 @@
 		765B238E2EC84C3900A58706 /* ViewModelStateNullable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStateNullable.swift; sourceTree = "<group>"; };
 		765B23902EC84C3900A58706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		765B23922EC84C3900A58706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		765B23932EC84C3900A58706 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		765B23942EC84C3900A58706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		765B23952EC84C3900A58706 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		765B23A12EC84C3D00A58706 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		765B23A32EC84C8F00A58706 /* ClipboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardScreen.swift; sourceTree = "<group>"; };
+		765B23A52EC84CA100A58706 /* ClipboardItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItemRow.swift; sourceTree = "<group>"; };
 		F4DA86892CC5309EF0F3B02B /* ClipboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,7 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				765B23952EC84C3900A58706 /* iOSApp.swift */,
-				765B23932EC84C3900A58706 /* ContentView.swift */,
+				765B23A32EC84C8F00A58706 /* ClipboardScreen.swift */,
+				765B23A52EC84CA100A58706 /* ClipboardItemRow.swift */,
 				765B23922EC84C3900A58706 /* Assets.xcassets */,
 				765B238F2EC84C3900A58706 /* mokoMvvmFlowSwiftUI */,
 				765B23912EC84C3900A58706 /* Preview Content */,
@@ -200,12 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765B23A42EC84C8F00A58706 /* ClipboardScreen.swift in Sources */,
 				765B23972EC84C3900A58706 /* CFlowExt.swift in Sources */,
 				765B23982EC84C3900A58706 /* ViewModelBinding.swift in Sources */,
 				765B23992EC84C3900A58706 /* ViewModelObservable.swift in Sources */,
 				765B239A2EC84C3900A58706 /* ViewModelState.swift in Sources */,
+				765B23A62EC84CA100A58706 /* ClipboardItemRow.swift in Sources */,
 				765B239B2EC84C3900A58706 /* ViewModelStateNullable.swift in Sources */,
-				765B239C2EC84C3900A58706 /* ContentView.swift in Sources */,
 				765B239D2EC84C3900A58706 /* iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

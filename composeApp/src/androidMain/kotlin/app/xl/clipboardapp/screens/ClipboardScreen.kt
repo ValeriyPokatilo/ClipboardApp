@@ -9,15 +9,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.xl.clipboardapp.data.TestRepositoryImpl
 import app.xl.clipboardapp.viewModel.ClipboardViewModel
 
 @Composable
 @Preview
 fun ClipboardScreen(
-    viewModel: ClipboardViewModel = viewModel {
-        ClipboardViewModel(repository = TestRepositoryImpl)
-    }
+    viewModel: ClipboardViewModel = viewModel()
 ) {
     val state = viewModel.items.collectAsState()
 

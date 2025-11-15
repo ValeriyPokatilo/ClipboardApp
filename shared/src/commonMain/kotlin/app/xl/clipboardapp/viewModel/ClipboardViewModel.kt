@@ -10,9 +10,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class ClipboardViewModel(
+class ClipboardViewModel(): ViewModel() {
     private val repository: Repository = TestRepositoryImpl
-): ViewModel() {
     private val _items = MutableStateFlow<List<ClipboardItem>>(emptyList()).cMutableStateFlow()
     val items = _items.asStateFlow().cStateFlow()
 
