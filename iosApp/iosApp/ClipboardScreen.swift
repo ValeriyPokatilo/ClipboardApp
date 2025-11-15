@@ -14,8 +14,11 @@ struct ClipboardScreen: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.state(\.items), id: \.id) {
-                ClipboardItemRow(item: $0)
+            ForEach(viewModel.state(\.items), id: \.id) { item in
+                ClipboardItemRow(item: item)
+                    .onTapGesture {
+                        viewModel.doCopyToClipboard(text: item.value)
+                    }
             }
         }
     }
