@@ -19,9 +19,15 @@ fun ClipboardScreen(
 ) {
     val state = viewModel.items.collectAsState()
 
-    Scaffold { innerPadding ->
+    Scaffold(
+        floatingActionButton = {
+            PlusFloatingButton(onClick = {
+                println("")
+            })
+        }
+    ) { innerPadding ->
         LazyColumn(
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier.padding(innerPadding),
         ) {
             items(state.value) { item ->
                 ClipboardItemRow(
