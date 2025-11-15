@@ -8,21 +8,22 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import app.xl.clipboardapp.screens.view.ClipboardItemRow
+import app.xl.clipboardapp.screens.view.PlusFloatingButton
 import app.xl.clipboardapp.viewModel.ClipboardViewModel
 
 @Composable
-@Preview
 fun ClipboardScreen(
-    viewModel: ClipboardViewModel = viewModel()
+    viewModel: ClipboardViewModel = viewModel(),
+    navigateToDetails: (Int?) -> Unit
 ) {
     val state = viewModel.items.collectAsState()
 
     Scaffold(
         floatingActionButton = {
             PlusFloatingButton(onClick = {
-                println("")
+                navigateToDetails(null)
             })
         }
     ) { innerPadding ->

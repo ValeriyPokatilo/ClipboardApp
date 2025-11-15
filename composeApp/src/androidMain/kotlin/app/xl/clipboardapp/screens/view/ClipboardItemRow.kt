@@ -1,4 +1,4 @@
-package app.xl.clipboardapp.screens
+package app.xl.clipboardapp.screens.view
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
