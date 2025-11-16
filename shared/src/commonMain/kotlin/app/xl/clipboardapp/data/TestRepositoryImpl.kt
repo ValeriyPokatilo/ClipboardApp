@@ -15,8 +15,14 @@ object TestRepositoryImpl: Repository {
         initTestRecords()
     }
 
-    override fun getAllRecords(): Flow<List<ClipboardItem>> {
+    override fun getAllItems(): Flow<List<ClipboardItem>> {
         return itemListFlow.asStateFlow()
+    }
+
+    override suspend fun getItem(id: Int): ClipboardItem? {
+        return itemListFlow
+            .value
+            .firstOrNull { it.id == id }
     }
 
     override suspend fun addClipboardItem(title: String, value: String) {

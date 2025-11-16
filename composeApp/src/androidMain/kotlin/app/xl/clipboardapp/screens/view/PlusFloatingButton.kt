@@ -24,7 +24,7 @@ fun PlusFloatingButton(
             onClick()
         },
         contentColor = Color.White,
-        containerColor = Color.Blue,
+        containerColor = Color.Green,
         shape = CircleShape
     ) {
         Icon(

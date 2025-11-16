@@ -26,7 +26,12 @@ fun NavGraph() {
         }
         composable(Screen.Details.route) { backStackEntry ->
             val id = backStackEntry.arguments?.getString("id")
-            DetailsScreen(id = id)
+            DetailsScreen(
+                id = id,
+                popBackStack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }

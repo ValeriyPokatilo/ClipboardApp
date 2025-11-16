@@ -18,7 +18,7 @@ class ClipboardViewModel(): ViewModel() {
 
     init {
         viewModelScope.launch {
-            repository.getAllRecords().collect { records ->
+            repository.getAllItems().collect { records ->
                 _items.value = records
             }
         }
