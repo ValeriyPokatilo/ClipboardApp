@@ -36,6 +36,9 @@ fun ClipboardScreen(
                         viewModel.doCopyToClipboard(item.value)
                     },
                     item = item,
+                    onEdit = {
+                        navigateToDetails(item.id)
+                    },
                     onDelete = { id ->
                         viewModel.deleteItem(id)
                     }

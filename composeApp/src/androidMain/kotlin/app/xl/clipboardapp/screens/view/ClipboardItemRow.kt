@@ -29,6 +29,7 @@ import app.xl.clipboardapp.domain.ClipboardItem
 fun ClipboardItemRow(
     modifier: Modifier = Modifier,
     item: ClipboardItem,
+    onEdit: (ClipboardItem) -> Unit,
     onDelete: (Int) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
@@ -66,6 +67,13 @@ fun ClipboardItemRow(
             expanded = expanded,
             onDismissRequest = { expanded = false }
         ) {
+            DropdownMenuItem(
+                text = { Text(text = "Edit") },
+                onClick = {
+                    expanded = false
+                    onEdit(item)
+                }
+            )
             DropdownMenuItem(
                 text = { Text(text = "Delete") },
                 onClick = {
