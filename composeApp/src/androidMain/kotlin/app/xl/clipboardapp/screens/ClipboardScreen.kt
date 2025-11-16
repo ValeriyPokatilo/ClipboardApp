@@ -35,7 +35,10 @@ fun ClipboardScreen(
                     modifier = Modifier.clickable {
                         viewModel.doCopyToClipboard(item.value)
                     },
-                    item = item
+                    item = item,
+                    onDelete = { id ->
+                        viewModel.deleteItem(id)
+                    }
                 )
             }
         }

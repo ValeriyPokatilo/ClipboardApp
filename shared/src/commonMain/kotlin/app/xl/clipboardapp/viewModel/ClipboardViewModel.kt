@@ -24,6 +24,12 @@ class ClipboardViewModel(): ViewModel() {
         }
     }
 
+    fun deleteItem(id: Int) {
+        viewModelScope.launch {
+            repository.deleteClipboardItem(id)
+        }
+    }
+
     fun doCopyToClipboard(text: String) {
         val clipboardManager = ClipboardManager()
         clipboardManager.copyText(text)
