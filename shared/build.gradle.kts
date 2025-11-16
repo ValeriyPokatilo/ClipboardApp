@@ -30,6 +30,7 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.mokoMvvm.core)
             implementation(libs.mokoMvvm.flow)
+            implementation(libs.kermit)
         }
         androidMain.dependencies {
             api(libs.mokoMvvm.core)

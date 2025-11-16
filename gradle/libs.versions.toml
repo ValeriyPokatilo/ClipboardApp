@@ -11,12 +11,14 @@ androidx-lifecycle = "2.9.5"
 androidx-testExt = "1.3.0"
 composeMultiplatform = "1.9.1"
 junit = "4.13.2"
+kermit = "2.0.2"
 kotlin = "2.2.20"
 kotlinxCoroutinesCore = "1.9.0"
 mokoMvvmCore = "0.16.1"
 navigationCompose = "2.9.5"
 
 [libraries]
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
