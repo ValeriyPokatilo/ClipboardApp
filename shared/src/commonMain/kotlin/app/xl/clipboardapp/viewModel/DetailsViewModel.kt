@@ -34,16 +34,16 @@ class DetailsViewModel(
         }
     }
 
-    fun saveItem(title: String, value: String) {
+    fun saveItem() {
         viewModelScope.launch {
             val existing = currentItem
 
             if (existing == null) {
-                repository.addClipboardItem(title, value)
+                repository.addClipboardItem(title.value, value.value)
             } else {
                 val updated = existing.copy(
-                    title = title,
-                    value = value
+                    title = title.value,
+                    value = value.value
                 )
                 repository.editClipboardItem(updated)
                 currentItem = updated
