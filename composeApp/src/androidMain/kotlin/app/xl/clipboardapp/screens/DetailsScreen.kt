@@ -17,9 +17,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import app.xl.clipboardapp.data.DatabaseDriverFactory
 import app.xl.clipboardapp.screens.view.DetailsButton
 import app.xl.clipboardapp.viewModel.DetailsViewModel
 
@@ -27,10 +29,13 @@ import app.xl.clipboardapp.viewModel.DetailsViewModel
 fun DetailsScreen(
     id: String?,
     popBackStack: () -> Unit,
-    viewModel: DetailsViewModel = viewModel {
-        DetailsViewModel(id = id)
-    }
+
 ) {
+    val context = LocalContext.current.applicationContext
+    val viewModel: DetailsViewModel = viewModel {
+        DetailsViewModel(id = id, DatabaseDriverFactory(context))
+    }
+
     val title by viewModel.title.collectAsStateWithLifecycle()
     val value by viewModel.value.collectAsStateWithLifecycle()
 

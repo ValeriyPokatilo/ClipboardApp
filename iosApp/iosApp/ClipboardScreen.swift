@@ -10,11 +10,18 @@ import SwiftUI
 
 struct ClipboardScreen: View {
     
-    @ObservedObject private var viewModel = ClipboardViewModel()
+    @ObservedObject private var viewModel: ClipboardViewModel
     @State private var path = NavigationPath()
     
     private var items: [ClipboardItemUI] {
         viewModel.state(\.items).map { ClipboardItemUI(item: $0) }
+    }
+    
+    init() {
+        let driverFactory = DatabaseDriverFactory()
+        self.viewModel = ClipboardViewModel(
+            databaseDriverFactory: driverFactory
+        )
     }
 
     var body: some View {

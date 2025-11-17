@@ -8,16 +8,21 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import app.xl.clipboardapp.data.DatabaseDriverFactory
 import app.xl.clipboardapp.screens.view.ClipboardItemRow
 import app.xl.clipboardapp.screens.view.PlusFloatingButton
 import app.xl.clipboardapp.viewModel.ClipboardViewModel
 
 @Composable
 fun ClipboardScreen(
-    viewModel: ClipboardViewModel = viewModel(),
     navigateToDetails: (Int?) -> Unit
 ) {
+    val context = LocalContext.current.applicationContext
+    val viewModel: ClipboardViewModel = viewModel {
+        ClipboardViewModel(DatabaseDriverFactory(context))
+    }
     val state = viewModel.items.collectAsState()
 
     Scaffold(

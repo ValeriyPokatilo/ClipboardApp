@@ -17,12 +17,17 @@ struct DetailsScreen: View {
 
     private var isDisabled: Bool {
         viewModel.binding(\.title).wrappedValue.isEmpty
-            && viewModel.binding(\.value).wrappedValue.isEmpty
+            || viewModel.binding(\.value).wrappedValue.isEmpty
     }
 
     init(item: ClipboardItem?) {
         self.item = item
-        self.viewModel = DetailsViewModel(id: item.flatMap { String($0.id) })
+        
+        let driverFactory = DatabaseDriverFactory()
+        self.viewModel = DetailsViewModel(
+            id: item.flatMap { String($0.id) },
+            databaseDriverFactory: driverFactory
+        )
     }
 
     var body: some View {

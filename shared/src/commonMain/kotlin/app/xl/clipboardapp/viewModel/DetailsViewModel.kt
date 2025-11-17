@@ -1,8 +1,13 @@
 package app.xl.clipboardapp.viewModel
 
+import app.xl.clipboardapp.data.ClipboardItemDao
+import app.xl.clipboardapp.data.DatabaseDriverFactory
+import app.xl.clipboardapp.data.SqlRepositoryImpl
 import app.xl.clipboardapp.data.TestRepositoryImpl
 import app.xl.clipboardapp.domain.ClipboardItem
 import app.xl.clipboardapp.domain.Repository
+import com.example.AppDatabase
+import com.example.AppDatabase.Companion.invoke
 import dev.icerock.moko.mvvm.flow.CMutableStateFlow
 import dev.icerock.moko.mvvm.flow.cMutableStateFlow
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
@@ -10,9 +15,19 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(
-    id: String?
+    id: String?,
+    private val databaseDriverFactory: DatabaseDriverFactory
 ): ViewModel() {
-    private val repository: Repository = TestRepositoryImpl
+    val coroutineScope = viewModelScope
+
+    private val database: AppDatabase by lazy {
+        AppDatabase(databaseDriverFactory.createDriver())
+    }
+
+    private val dao: ClipboardItemDao by lazy {
+        ClipboardItemDao(database, coroutineScope.coroutineContext)
+    }
+    private val repository: Repository = SqlRepositoryImpl.getInstance(dao)
     private var currentItem: ClipboardItem? = null
     val title: CMutableStateFlow<String> = MutableStateFlow("").cMutableStateFlow()
     val value: CMutableStateFlow<String> = MutableStateFlow("").cMutableStateFlow()
