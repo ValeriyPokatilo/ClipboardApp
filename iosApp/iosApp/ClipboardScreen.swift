@@ -24,6 +24,14 @@ struct ClipboardScreen: View {
                         .onTapGesture {
                             viewModel.doCopyToClipboard(text: itemUI.value)
                         }
+                        .swipeActions {
+                            Button {
+                                viewModel.deleteItem(id: itemUI.item.id)
+                            } label: {
+                                Label("Delete", image: "trash")
+                            }
+                            .tint(.red)
+                        }
                 }
             }
             .toolbar {
