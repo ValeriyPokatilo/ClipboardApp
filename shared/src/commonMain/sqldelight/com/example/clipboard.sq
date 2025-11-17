@@ -1,18 +1,23 @@
-CREATE TABLE DbRecord (
+CREATE TABLE DbItem (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
-    record TEXT NOT NULL
+    value TEXT NOT NULL
 );
 
 selectAll:
-SELECT * FROM DbRecord;
+SELECT * FROM DbItem;
 
 selectById:
-SELECT * FROM DbRecord WHERE id = ?;
+SELECT * FROM DbItem WHERE id = ?;
 
-insertRecord:
-INSERT INTO DbRecord(title, record)
+insertItem:
+INSERT INTO DbItem(title, value)
 VALUES (?, ?);
 
 deleteById:
-DELETE FROM DbRecord WHERE id = ?;
+DELETE FROM DbItem WHERE id = ?;
+
+editItem:
+UPDATE DbItem
+SET title = ?, value = ?
+WHERE id = ?;
