@@ -10,7 +10,6 @@ import Shared
 
 struct ClipboardItemUI: Identifiable, Hashable {
     let item: ClipboardItem
-
     var id: Int { Int(item.id) }
     var title: String { item.title }
     var value: String { item.value }

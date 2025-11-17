@@ -5,21 +5,26 @@
 //  Created by Valeriy P on 16.11.2025.
 //
 
-import SwiftUI
 import Shared
+import SwiftUI
 
 struct DetailsScreen: View {
-    
-    let item: ClipboardItem?
-    
+
     @ObservedObject private var viewModel: DetailsViewModel
     @Environment(\.dismiss) private var dismiss
 
+    let item: ClipboardItem?
+
+    private var isDisabled: Bool {
+        viewModel.binding(\.title).wrappedValue.isEmpty
+            && viewModel.binding(\.value).wrappedValue.isEmpty
+    }
+
     init(item: ClipboardItem?) {
         self.item = item
-        self.viewModel = DetailsViewModel(id: "\(String(describing: item?.id))")
+        self.viewModel = DetailsViewModel(id: item.flatMap { String($0.id) })
     }
-    
+
     var body: some View {
         VStack {
             TextField("Title", text: viewModel.binding(\.title))
@@ -37,7 +42,7 @@ struct DetailsScreen: View {
                 .foregroundStyle(.white)
                 .background(.red)
                 .cornerRadius(8)
-                
+
                 Button {
                     viewModel.saveItem()
                     // *** async
@@ -48,8 +53,9 @@ struct DetailsScreen: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 40)
                 .foregroundStyle(.white)
-                .background(.green)
+                .background(isDisabled ? .gray : .green)
                 .cornerRadius(8)
+                .disabled(isDisabled)
             }
         }
         .padding(.horizontal)
