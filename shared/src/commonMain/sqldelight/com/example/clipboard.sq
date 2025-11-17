@@ -1,0 +1,18 @@
+CREATE TABLE DbRecord (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    record TEXT NOT NULL
+);
+
+selectAll:
+SELECT * FROM DbRecord;
+
+selectById:
+SELECT * FROM DbRecord WHERE id = ?;
+
+insertRecord:
+INSERT INTO DbRecord(title, record)
+VALUES (?, ?);
+
+deleteById:
+DELETE FROM DbRecord WHERE id = ?;
